@@ -1,0 +1,747 @@
+/* CSS Reset */
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* /CSS Reset */
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+/* @Font-Face */
+
+@font-face {
+	font-family: 'Monument Extended';
+	src: url("../webfonts/MonumentExtended-Regular.woff2") format("woff2"), url("../webfonts/MonumentExtended-Regular.woff") format("woff");
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'Neue Machina';
+	src: url("../webfonts/NeueMachina-Regular.woff2") format('woff2'), url("../webfonts/NeueMachina-Regular.woff") format("woff");
+	font-weight: 400;
+	font-feature-settings: 'ss01' on;
+}
+
+@font-face {
+	font-family: 'Neue Machina';
+	src: url("../webfonts/NeueMachina-Ultrabold.woff2") format("woff2"), url("../webfonts/NeueMachina-Ultrabold.woff") format("woff");
+	font-weight: 800;
+	font-feature-settings: 'ss01' on;
+}
+
+@font-face {
+    font-family: 'Inge';
+		src: url("../webfonts/Inge-Upright.woff2") format("woff2"), url("../webfonts/Inge-Upright.woff") format("woff");
+		font-feature-settings: 'salt' on;
+}
+
+/* /@Font-Face */
+
+/* Selection Colors */
+
+::-moz-selection {
+  color: #301732;
+  background: #1AE684;
+}
+
+::selection {
+  color: #301732;
+  background: #1AE684;
+}
+
+/* /Selection Colors */
+
+body {
+	background: url('../assets/images/background_noise.gif') #301732;
+	background-size: auto;
+	background-repeat: repeat;
+	color: #F5F1F1;
+	font-family: 'Neue Machina', sans-serif;
+	font-weight: 400;
+	overflow-x: hidden;
+}
+
+/* Common properties */
+
+body, .container, footer nav, header nav, .intro-home, .info, .info-content, .list-info, .project-list, .project-header {
+	display: flex;
+}
+
+body, .container {
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+footer nav, header nav, .project-list {
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+header nav, h3, h5, footer, .intro-home h2 span {
+	font-family: 'Monument Extended';
+}
+
+header nav, h5, footer, .intro-home h2 span {
+	font-size: 12px;
+}
+
+header, footer {
+	flex: 0 1 auto;
+}
+
+footer a, header a, .project-info a, .projects-nav a, .project-links a, .disabled:hover {
+	color: #F5F1F1;
+}
+
+header a:hover, footer a:hover, .info a:hover, .bottom-info p:last-child a:hover, .project-links a:hover,
+.project-info a:hover, .big-text a:hover, .projects-nav a h4:hover, .caption a:hover {
+	color: #1AE684;
+}
+
+h2, h3, h4, h5, h6, header, footer {
+	text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+h2, h4 {
+	font-family: 'Inge', sans-serif;
+}
+
+p, ul, h5 {
+	line-height: 1.4;
+}
+
+.intro-home, .project-header {
+	flex: 1 1 auto;
+	text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-info h5, .bottom-info p:last-child, .bottom-info P:last-child a, .project-info h5, .project-intro h5 a,
+.projects-nav h5, .caption, .caption a, .gallery h3, .project-links a h4 span, .project-links a:hover > span {
+	color: #847C8C;
+}
+
+/* /Common properties */
+
+strong {
+	font-weight: 800;
+}
+
+.viewport-size {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+.background-video {
+	object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+	opacity: 0.45;
+	z-index: -1;
+}
+
+video::-webkit-media-controls-panel, video::-moz-media-controls-panel,
+video::-webkit-media-controls-start-playback-button, video::-moz-media-controls-start-playback-button {
+display: none !important;
+opacity: 1 !important;
+}
+
+.container {
+	position: relative;
+	padding: 4vh 4vw;
+}
+
+header {
+	position: relative;
+	padding-bottom: 4vh;
+}
+
+header nav {
+	height: 70px;
+}
+
+.main-menu-link {
+	display: block;
+	width: 105px;
+}
+
+.active-link {
+	color:#1AE684;
+}
+
+header nav a:last-child {
+	text-align: right;
+}
+
+header svg {
+  width: 70px;
+  height: 70px;
+	fill: #F5F1F1;
+}
+
+header svg:hover {
+  fill: #1AE684;
+}
+
+h2 {
+	font-size: 25vw;
+}
+
+h2 span {
+	display: block;
+}
+
+h2 span:last-child {
+	margin-top: -2.4vw;
+}
+
+h3 {
+	font-size: 24px;
+}
+
+h4 {
+	font-size: 112px;
+}
+
+.horizontal-line {
+	background-color: #3A293D;
+	height: 3px;
+	margin: 2vh 0;
+}
+
+.disabled {
+	text-decoration: line-through;
+	opacity: 0.6;
+}
+
+/* Home */
+
+.intro-home h2 {
+	margin-top: -4vh;
+}
+
+/* /Home */
+
+/* Info */
+
+.info {
+	justify-content: space-between;
+	flex-direction: row;
+	width: 100%;
+}
+
+.info p, .info ul {
+	margin-bottom: 16px;
+}
+
+.info a {
+	text-decoration: underline;
+	color: #F5F1F1;
+}
+
+.info-photo {
+	object-fit: cover;
+	object-position: top;
+	width: 40%;
+	height: auto;
+	margin-top: 1vh;
+
+}
+
+.info-content {
+	position: relative;
+	flex-direction: column;
+	padding-left: 3vw;
+	width: 60%;
+}
+
+.list-info {
+	justify-content: space-between;
+}
+
+/* /Info */
+
+/* Gallery */
+
+.project-links ul {
+	line-height: 1;
+}
+
+.project-list {
+	padding-top: 2vh;
+}
+
+.project-list:first-child {
+	padding-top: 0vh;
+}
+
+/* /Gallery */
+
+/* Thumbnails */
+
+.project-thumbnail {
+	position: absolute;
+	right: 4vw;
+	z-index: -1;
+	mix-blend-mode: overlay;
+}
+
+.project-thumbnail img {
+	object-fit: cover;
+	height: 320px;
+	padding-bottom: 1.5vh;
+	width: auto;
+	filter: grayscale(0.8);
+	opacity: 0.8;
+}
+
+/* /Thumbnails */
+
+/* Covers */
+
+.project-cover {
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+	overflow: hidden;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	opacity: 0.45;
+}
+
+.cover-canasta {
+	background-image: url(../assets/images/cover_canasta.png);
+}
+
+.cover-vibe {
+	background-image: url(../assets/images/cover_vibe.png);
+}
+
+.cover-amazonas {
+	background-image: url(../assets/images/cover_amazonas.png);
+}
+
+.cover-sunrise {
+	background-image: url(../assets/images/cover_sunrise.png);
+}
+
+.cover-avalanche {
+	background-image: url(../assets/images/cover_avalanche.png);
+}
+
+.cover-float {
+	background-image: url(../assets/images/cover_float.png);
+}
+
+.cover-nba {
+	background-image: url(../assets/images/cover_nba.png);
+}
+
+.cover-olympic {
+	background-image: url(../assets/images/cover_olympic.png);
+}
+
+.cover-kitkat {
+	background-image: url(../assets/images/cover_kitkat.png);
+}
+
+/* /Covers */
+
+/* Project */
+
+.progress-bar {
+	background-color: #1AE684;
+	position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 5px;
+	z-index: 2;
+}
+
+.project-header {
+	height: calc(96vh - 70px);
+}
+
+.project-header h2 {
+	margin-top: -13.5vh;
+}
+
+.smaller-heading {
+	font-size: 20vw;
+}
+
+.project-info {
+	padding-bottom: 8vh;
+}
+
+.project-intro, .projects-nav {
+	display: flex;
+	justify-content: space-between;
+}
+
+.project-intro {
+		padding-top: 4vh;
+		padding-bottom: 6vh;
+}
+
+.project-intro div:last-child {
+	width: 40%;
+}
+
+.project-info, .project-content {
+	padding-top: 4vh;
+}
+
+.project-intro p, .big-text-space {
+	padding-bottom: 3vh;
+}
+
+.project-content img {
+	object-fit: contain;
+	width: 100%;
+	height: auto;
+}
+
+.big-text {
+	font-size: 20px;
+	line-height: 140%;
+}
+
+.big-text a {
+	color: #F5F1F1;
+	text-decoration: underline;
+}
+
+.caption {
+	margin-top: 2vh;
+}
+
+.main-info {
+	width: 75%;
+	padding-bottom: 8vh;
+}
+
+.main-info, .add-space {
+		padding-top: 8vh;
+}
+
+.add-less-space {
+	padding-top: 4vh;
+}
+
+.projects-nav {
+	width: 100%;
+	align-items: center;
+	padding: 8vh 0;
+}
+
+.project-info a {
+	text-decoration: underline;
+}
+
+.next-project {
+	text-align: right;
+}
+
+/* /Project */
+
+footer {
+	overflow: hidden;
+	margin-top: auto;
+	padding-top: 4vh;
+	padding-bottom: 1vh;
+}
+
+/* Media Queries */
+
+@media (max-width: 1110px) {
+
+	.info-photo {
+		width: 30%;
+	}
+
+	.info-content {
+		width: 70%;
+	}
+
+	.project-intro div:last-child {
+    width: 55%;
+	}
+
+}
+
+@media (max-width: 960px) {
+
+	.info {
+		flex-direction: column;
+	}
+
+	.info-photo, .info-content {
+		width: 100%;
+	}
+
+	.info-photo {
+		padding-top: 0;
+		padding-bottom: 3vh;
+	}
+
+	.info-content {
+		padding-left: 0;
+	}
+
+}
+
+@media (max-width: 890px) {
+
+	.project-list h4 {
+		font-size: 96px;
+	}
+
+	.project-thumbnail img {
+		display: none;
+	}
+
+
+}
+
+@media (max-width: 830px) {
+
+	.project-intro {
+		flex-direction: column;
+	}
+
+	.project-intro .add-space-bottom {
+		padding-bottom: 4vh;
+	}
+
+	.project-intro div:last-child {
+		width: 100%;
+	}
+
+	.projects-nav h4 {
+		font-size: 80px;
+	}
+
+}
+
+@media (max-width: 760px) {
+
+	.project-list h4 {
+		font-size: 80px;
+	}
+
+}
+
+@media (max-width: 750px) {
+
+	.container {
+		padding-left: 8vw;
+		padding-right: 8vw;
+	}
+
+	.main-info {
+		width: 100%;
+		padding-bottom: 8vh;
+	}
+
+	.project-thumbnail {
+		right: 8vw;
+	}
+
+	/*
+	.project-thumbnail img {
+		height: 220px;
+	}
+	*/
+
+}
+
+@media (max-width: 695px) {
+
+	.project-list h4 span {
+		display: block;
+		margin-top: -1vh;
+	}
+
+	.project-links ul li {
+		padding-bottom: 2vh;
+	}
+
+	.project-links ul li:last-child {
+		padding-bottom: 0vh;
+	}
+
+}
+
+@media (max-width: 680px) {
+
+	.list-info {
+		flex-direction: column;
+	}
+
+	h4, .projects-nav h4, .project-list h4 {
+		font-size: 64px;
+	}
+
+	.project-thumbnail img {
+		height: 180px;
+	}
+
+	.project-info {
+		padding-bottom: 4vh;
+	}
+
+	.projects-nav {
+		padding: 4vh 0;
+	}
+
+}
+
+@media (max-width: 540px) {
+
+	.projects-nav h4 {
+		font-size: 56px;
+	}
+
+}
+
+@media (max-width: 450px) {
+
+	.container {
+		padding-left: 10vw;
+		padding-right: 10vw;
+	}
+
+	header svg {
+		height: 50px;
+		width: 50px;
+	}
+
+	.project-header {
+		height: calc(96vh - 50px);
+	}
+
+	header nav {
+		height: 50px;
+	}
+
+	.esp-link {
+		font-size: 10px;
+	}
+
+	footer nav {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	footer nav a:first-child {
+		padding-bottom: 2vh;
+	}
+
+	.main-info {
+		padding-top: 4vh;
+		padding-bottom: 4vh;
+	}
+
+	.big-text {
+		font-size: 18px;
+	}
+
+	.projects-nav h4, .project-list h4 {
+			font-size: 48px;
+	}
+
+	.project-list {
+		padding-top: 1vh;
+	}
+
+	/*
+	.project-thumbnail img {
+		height: 100px;
+	}
+	*/
+
+
+}
+
+@media (max-width: 360px) {
+
+	body {
+		font-size: 14px;
+	}
+
+	header nav, h5, footer, .intro-home h2 span {
+		font-size: 10px;
+	}
+
+}
+
+/* /Media Queries */
