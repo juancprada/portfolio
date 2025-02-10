@@ -68,23 +68,17 @@ table {
 }
 
 @font-face {
-	font-family: 'Neue Machina';
-	src: url("../webfonts/NeueMachina-Regular.woff2") format('woff2'), url("../webfonts/NeueMachina-Regular.woff") format("woff");
+	font-family: 'Telegraf';
+	src: url("../webfonts/Telegraf-Regular.woff2") format('woff2'), url("../webfonts/Telegraf-Regular.woff") format("woff");
 	font-weight: 400;
-	font-feature-settings: 'ss01' on;
+	/* font-feature-settings: 'ss01' on; */
 }
 
 @font-face {
-	font-family: 'Neue Machina';
-	src: url("../webfonts/NeueMachina-Ultrabold.woff2") format("woff2"), url("../webfonts/NeueMachina-Ultrabold.woff") format("woff");
+	font-family: 'Telegraf';
+	src: url("../webfonts/Telegraf-Bold.woff2") format("woff2"), url("../webfonts/Telegraf-Bold.woff") format("woff");
 	font-weight: 800;
-	font-feature-settings: 'ss01' on;
-}
-
-@font-face {
-    font-family: 'Inge';
-		src: url("../webfonts/Inge-Upright.woff2") format("woff2"), url("../webfonts/Inge-Upright.woff") format("woff");
-		font-feature-settings: 'salt' on;
+	/* font-feature-settings: 'ss01' on; */
 }
 
 /* /@Font-Face */
@@ -92,30 +86,30 @@ table {
 /* Selection Colors */
 
 ::-moz-selection {
-  color: #301732;
+  color: #1F2123;
   background: #1AE684;
 }
 
 ::selection {
-  color: #301732;
+  color: #1F2123;
   background: #1AE684;
 }
 
 /* /Selection Colors */
 
 body {
-	background: url('../assets/images/background_noise.gif') #301732;
+	background: url('../assets/images/background_noise.gif') #1F2123;
 	background-size: auto;
 	background-repeat: repeat;
 	color: #F5F1F1;
-	font-family: 'Neue Machina', sans-serif;
+	font-family: 'Telegraf', sans-serif;
 	font-weight: 400;
 	overflow-x: hidden;
 }
 
 /* Common properties */
 
-body, .container, footer nav, header nav, .intro-home, .info, .info-content, .list-info, .project-list, .project-header {
+body, .container, footer nav, header nav, .intro-home, .gallery, .box, .info, .info-content, .list-info, .project-list, .project-header {
 	display: flex;
 }
 
@@ -146,8 +140,8 @@ footer a, header a, .project-info a, .projects-nav a, .project-links a, .disable
 	color: #F5F1F1;
 }
 
-header a:hover, footer a:hover, .info a:hover, .bottom-info p:last-child a:hover, .project-links a:hover,
-.project-info a:hover, .big-text a:hover, .projects-nav a h4:hover, .caption a:hover {
+header a:hover, footer a:hover, .info a:hover, .bottom-info p:last-child a:hover, .box:hover a h5, .project-links a:hover,
+.project-info a:hover, .big-text a:hover, .projects-nav a h5:hover, .caption a:hover {
 	color: #1AE684;
 }
 
@@ -155,16 +149,20 @@ h2, h3, h4, h5, h6, header, footer {
 	text-transform: uppercase;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h5, h6 {
 	font-weight: normal;
 }
 
 h2, h4 {
-	font-family: 'Inge', sans-serif;
+	font-family: 'Monument Extended', sans-serif;
 }
 
-p, ul, h5 {
-	line-height: 1.4;
+h4 {
+	font-weight: bold;
+}
+
+p, ul, h2, h4, h5 {
+	line-height: 1.25;
 }
 
 .intro-home, .project-header {
@@ -176,7 +174,7 @@ p, ul, h5 {
 
 .list-info h5, .bottom-info p:last-child, .bottom-info P:last-child a, .project-info h5, .project-intro h5 a,
 .projects-nav h5, .caption, .caption a, .gallery h3, .project-links a h4 span, .project-links a:hover > span {
-	color: #847C8C;
+	color: #8C8C8C;
 }
 
 /* /Common properties */
@@ -202,8 +200,19 @@ a {
   position: fixed;
   top: 0;
   left: 0;
-	opacity: 0.45;
 	z-index: -1;
+}
+
+.noise-overlay {
+	background: url('../assets/images/background_noise_overlay.gif');
+	background-size: auto;
+	background-repeat: repeat;
+	mix-blend-mode: multiply;
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+	overflow: hidden;
+	opacity: 0.7;
 }
 
 video::-webkit-media-controls-panel, video::-moz-media-controls-panel,
@@ -250,7 +259,7 @@ header svg:hover {
 }
 
 h2 {
-	font-size: 25vw;
+	font-size: 4vw;
 }
 
 h2 span {
@@ -266,13 +275,14 @@ h3 {
 }
 
 h4 {
-	font-size: 112px;
+	font-size: 32px;
 }
 
 .horizontal-line {
-	background-color: #3A293D;
+	background-color: #323232;
 	height: 3px;
 	margin: 2vh 0;
+	opacity:0.7;
 }
 
 .disabled {
@@ -310,9 +320,11 @@ h4 {
 	object-position: top;
 	width: 40%;
 	height: auto;
-	margin-top: 1vh;
+	margin-top: 0.5vh;
+	opacity: 0.4;
 
 }
+
 
 .info-content {
 	position: relative;
@@ -328,6 +340,10 @@ h4 {
 /* /Info */
 
 /* Gallery */
+
+.gallery {
+	flex-wrap: wrap;
+}
 
 .project-links ul {
 	line-height: 1;
@@ -345,6 +361,46 @@ h4 {
 
 /* Thumbnails */
 
+.box {
+	height: 240px;
+	width: 33.33%;
+	margin-bottom: 4vh;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.box h5 {
+	color: #F5F1F1;
+	margin-top: 10px;
+	padding-right: 10px;
+}
+
+.box h5 span {
+	color: #8C8C8C;
+}
+
+.box img {
+	object-fit: cover;
+	object-position: center;
+	height: 200px;
+	width: 100%;
+	filter: grayscale(1);
+	opacity: 0.2;
+}
+
+.thumbnail {
+	/* background-color: blueviolet; */
+	background-size: cover;
+	background-position: center;
+	height: 200px;
+}
+
+.box:hover img {
+	opacity: 1;
+	filter: grayscale(0);
+}
+
+/*
 .project-thumbnail {
 	position: absolute;
 	right: 4vw;
@@ -360,12 +416,13 @@ h4 {
 	filter: grayscale(0.8);
 	opacity: 0.8;
 }
+*/
 
 /* /Thumbnails */
 
 /* Covers */
 
-.project-cover {
+.project-cover, .home-cover {
 	height: 100vh;
 	width: 100vw;
 	position: absolute;
@@ -373,9 +430,16 @@ h4 {
 	background-size: cover;
 	background-attachment: fixed;
 	background-position: center;
-	opacity: 0.45;
+	opacity: 0.2;
+	filter: grayscale(0.5);
+
+	z-index: -1;
 }
 
+.cover-home {
+		background-image: url(../assets/images/cover_home_static.png);
+
+}
 .cover-canasta {
 	background-image: url(../assets/images/cover_canasta.png);
 }
@@ -485,7 +549,7 @@ h4 {
 }
 
 .main-info {
-	width: 75%;
+	width: 100%;
 	padding-bottom: 8vh;
 }
 
@@ -509,6 +573,11 @@ h4 {
 
 .next-project {
 	text-align: right;
+}
+
+.image-effect {
+	opacity: 0.4;
+	filter: grayscale(1);
 }
 
 /* /Project */
@@ -587,7 +656,7 @@ footer {
 	}
 
 	.projects-nav h4 {
-		font-size: 80px;
+		font-size: 32px;
 	}
 
 }
@@ -597,6 +666,10 @@ footer {
 	.project-list h4 {
 		font-size: 80px;
 	}
+	
+		.projects-nav h4 {
+		font-size: 24px;
+	}
 
 }
 
@@ -605,6 +678,10 @@ footer {
 	.container {
 		padding-left: 8vw;
 		padding-right: 8vw;
+	}
+	
+	.box {
+		width: 50%;
 	}
 
 	.main-info {
@@ -648,7 +725,7 @@ footer {
 	}
 
 	h4, .projects-nav h4, .project-list h4 {
-		font-size: 64px;
+		font-size: 16px;
 	}
 
 	.project-thumbnail img {
@@ -668,7 +745,7 @@ footer {
 @media (max-width: 540px) {
 
 	.projects-nav h4 {
-		font-size: 56px;
+		font-size: 16px;
 	}
 
 }
@@ -683,6 +760,10 @@ footer {
 	header svg {
 		height: 50px;
 		width: 50px;
+	}
+	
+	.box {
+		width: 100%;
 	}
 
 	.project-header {
@@ -716,7 +797,7 @@ footer {
 	}
 
 	.projects-nav h4, .project-list h4 {
-			font-size: 48px;
+			font-size: 16px;
 	}
 
 	.project-list {
