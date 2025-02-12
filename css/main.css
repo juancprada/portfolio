@@ -362,7 +362,6 @@ h4 {
 /* Thumbnails */
 
 .box {
-	height: 240px;
 	width: 33.33%;
 	margin-bottom: 4vh;
 	flex-direction: column;
@@ -382,14 +381,13 @@ h4 {
 .box img {
 	object-fit: cover;
 	object-position: center;
-	height: 200px;
+	aspect-ratio: 16/9;
 	width: 100%;
 	filter: grayscale(1);
 	opacity: 0.2;
 }
 
 .thumbnail {
-	/* background-color: blueviolet; */
 	background-size: cover;
 	background-position: center;
 	height: 200px;
